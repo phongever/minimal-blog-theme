@@ -12,16 +12,16 @@ const title = "Blog";
 
 <Layout title={title}>
   <h1>{title}</h1>
-  <ul class="list-none pl-0 space-y-4">
+  <section class="space-y-4">
     {
       sortedBlogPosts.map((post) => (
-        <li>
+        <article>
           <time datetime={post.data.date.toString()}>
             {formatDate(post.data.date)}
           </time>{" "}
           --- <a href={`/blog/${post.slug}`}>{post.data.title}</a>
-        </li>
+        </article>
       ))
     }
-  </ul>
+  </section>
 </Layout>
