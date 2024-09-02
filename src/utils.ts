@@ -1,9 +1,5 @@
-export const formatDate = (date: Date): string => {
-  const day = date.getDate();
-  const month = date.getMonth() + 1;
-  const year = date.getFullYear();
+import dayjs from "dayjs";
 
-  return `${day.toString().padStart(2, "0")}-${month
-    .toString()
-    .padStart(2, "0")}-${year}`;
+export const formatDate = (date: Date): string => {
+  return dayjs(date).format("DD-MM-YYYY");
 };
